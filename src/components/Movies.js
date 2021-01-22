@@ -26,26 +26,26 @@ export const Movies = () => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={query}
-          onChange={queryHandler}
+    <div className='container-fluid'>
+      <div class='input-group mb-5'>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={query}
+        onChange={queryHandler}
+        aria-describedby="inputGroup-sizing-sm"
+        class="form-control"
         />
       </div>
-      <div>
-        {results.length > 0 && (
-          <ul>
-            {results.map((movie) => (
-              <li key={movie.id}>
-                  <MovieContainer movie={movie} />
-              </li>
-            ))}
-          </ul>
-        )}
+    {results.length > 0 && (
+      <div style={{border: '1px solid black',textAlign:'center',minHeight:'200px'}} className='row justify-content-center'>
+          {results.map((movie) => (
+           <div style={{border:'1px solid black'}} className='col col-4' key={movie.id}>
+              <MovieContainer movie={movie} />
+            </div>
+          ))}
       </div>
-    </div>
+    )}
+  </div>
   );
 };
