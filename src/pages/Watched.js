@@ -7,10 +7,11 @@ export const Watched = () => {
 
   return (
     <div className='container-fluid'>
-      <h1>Watched</h1>
-      <span>
+      <h1>Movies I've Watched</h1>
+      <span style={{marginLeft:'20px'}}>
         {watched.length}
-        {watched.length === 1 ? "Movie" : "Movies"}
+        {watched.length === 1 ? " Movie" : " Movies"}
+        <hr />
       </span>
       <div className='row justify-content-center'>
         {watched.length > 0 ? (
@@ -20,7 +21,7 @@ export const Watched = () => {
             ))}
           </>
         ) : (
-          <h2>you have not watched any movies</h2>
+          <div style={{fontSize:'25px',color:'#aaa',marginTop:'60px'}}>Add movies to your watched list</div>
         )}
       </div>
     </div>

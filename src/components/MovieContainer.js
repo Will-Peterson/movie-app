@@ -24,7 +24,7 @@ export const MovieContainer = ({movie}) => {
                     rounded
                     src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
                 ) : (
-                    <div style={{background:'-webkit-gradient(linear,left top,left bottom,from(#666),to(#ccc)',width:'300px',height:'450px',fontSize:'30px',fontWeight:'bold',lineHeight:'450px'}}>No Poster Available</div>
+                    <div style={{background:'-webkit-gradient(linear,left top,left bottom,from(#666),to(#ccc)',borderRadius:'.25rem',width:'300px',height:'450px',fontSize:'30px',fontWeight:'bold',lineHeight:'450px'}}>No Poster Available</div>
                     )}
             <div className='' style={{fontSize:'20px',fontWeight:'bold',textAlign:'left'}}>
                 {movie.title}
