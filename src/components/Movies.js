@@ -30,7 +30,8 @@ export const Movies = () => {
       <div class='input-group mb-5 mt-5'>
         <input
           type="text"
-          placeholder="Search..."
+          autoFocus
+          placeholder="Search for movies..."
           value={query}
           onChange={queryHandler}
           aria-describedby="inputGroup-sizing-sm"
@@ -40,7 +41,7 @@ export const Movies = () => {
       {results.length > 0 && (
         <div style={{textAlign:'center'}} className='row justify-content-center'>
             {results.map((movie) => (
-              <div style={{border:'1px solid black',maxWidth:'320px'}} className='mx-3 mb-4' key={movie.id}>
+              <div style={{maxWidth:'320px'}} className='mx-3' key={movie.id}>
                 <MovieContainer movie={movie} />
               </div>
             ))}

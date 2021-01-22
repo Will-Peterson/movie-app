@@ -14,20 +14,40 @@ export const MovieControls = ({ movie, type }) => {
     <div>
       {type === "watchlist" && (
         <>
-          <Button onClick={() => addMovieToWatched(movie)}>
-            add to watched
+          <Button 
+            onClick={() => addMovieToWatched(movie)}
+            variant='dark'
+            size='sm'
+            className='mt-2'
+          >
+            Add to Watched
           </Button>
-          <Button onClick={() => removeMovieFromWatchlist(movie.id)}>
-            remove
+          <Button 
+            onClick={() => removeMovieFromWatchlist(movie.id)}
+            variant='dark'
+            size='sm'
+            className='mt-2 float-right'
+            >
+            Remove
           </Button>
         </>
       )}
       {type === "watched" && (
         <>
-          <Button onClick={() => addMovieToWatchlist(movie)}>
-            move to watchlist
+          <Button 
+            onClick={() => addMovieToWatchlist(movie)}
+            variant='dark'
+            size='sm'
+            className='mt-2'
+            >
+            Add to Watchlist
           </Button>
-          <Button onClick={() => removeFromWatched(movie.id)}>remove</Button>
+          <Button 
+            onClick={() => removeFromWatched(movie.id)}
+            variant='dark'
+            size='sm'
+            className='mt-2 float-right'
+          >Remove</Button>
         </>
       )}
     </div>
