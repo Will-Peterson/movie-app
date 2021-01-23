@@ -5,7 +5,7 @@ const api = {
   key: process.env.REACT_APP_MOVIE_API_KEY,
 };
 
-export const Movies = () => {
+export const FetchMovies = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -39,7 +39,7 @@ export const Movies = () => {
         />  
       </div>
       {results.length > 0 && (
-        <div style={{textAlign:'center'}} className='row justify-content-center'>
+        <div className='row justify-content-center text-center'>
             {results.map((movie) => (
               <div style={{maxWidth:'320px'}} className='mx-3' key={movie.id}>
                 <MovieContainer movie={movie} />

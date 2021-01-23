@@ -7,20 +7,19 @@ const Styles = styled.div`
   .navbar {
     background-color: #222;
   }
-  a, 
-  .navbar-brand, .nav-link, .hamburger{
+  a, .navbar-brand, .navbar-nav .nav-link {
     color: #bbb;
     &:hover {
       color: white;
     }
   }
 `;
-// .custom-toggler.navbar-toggler
+
 export const NavigationBar = () => (
   <Styles>
     <Navbar expand="lg" fixed='top'>
       <Navbar.Brand href="/">Movie App</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className='hamburger' />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>

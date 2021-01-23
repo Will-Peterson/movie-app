@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 export const MovieControls = ({ movie, type }) => {
   const {
-    addMovieToWatchlist,
     addMovieToWatched,
     removeMovieFromWatchlist,
-    removeFromWatched
+    removeMovieFromWatched,
+    moveMovieToWatchlistFromWatched
   } = useContext(GlobalContext);
 
   return (
@@ -35,7 +35,7 @@ export const MovieControls = ({ movie, type }) => {
       {type === "watched" && (
         <>
           <Button 
-            onClick={() => addMovieToWatchlist(movie)}
+            onClick={() => moveMovieToWatchlistFromWatched(movie)}
             variant='dark'
             size='sm'
             className='mt-2'
@@ -43,11 +43,12 @@ export const MovieControls = ({ movie, type }) => {
             Add to Watchlist
           </Button>
           <Button 
-            onClick={() => removeFromWatched(movie.id)}
+            onClick={() => removeMovieFromWatched(movie.id)}
             variant='dark'
             size='sm'
             className='mt-2 float-right'
-          >Remove</Button>
+          >Remove
+          </Button>
         </>
       )}
     </div>

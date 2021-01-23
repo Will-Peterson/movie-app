@@ -1,8 +1,8 @@
 import React from "react";
-import {Movies} from '../components/Movies';
+import {FetchMovies} from '../components/FetchMovies';
 
 export const Home = () => (
   <>
-    <Movies />
+    <FetchMovies />
   </>
 );

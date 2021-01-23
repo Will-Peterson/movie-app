@@ -31,7 +31,7 @@ export const Jumbotron = () => (
             <div className='overlay'></div>
             <Container>
                 <h1>Movie DB</h1>
-                <p>Build your personal movie lists</p>
+                <p>Build your personal movie list</p>
             </Container>
         </Jumbo>
     </Styles>
