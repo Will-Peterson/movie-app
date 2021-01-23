@@ -13,6 +13,7 @@ const Styles = styled.div`
     color: #bbb;
     &:hover {
       color: white;
+      text-decoration: none;
     }
   }
 `;
@@ -37,11 +38,6 @@ export const NavigationBar = () => (
           <Nav.Item>
             <Nav.Link>
               <Link to="/watched">Watched</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/about">About</Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>

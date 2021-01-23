@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Home } from "./pages/Home";
 import { Watchlist } from "./pages/Watchlist";
-import { About } from "./pages/About";
 import { Watched } from "./pages/Watched";
 import { NoMatch } from "./pages/NoMatch";
 import { Layout } from "./components/Layout";
@@ -20,7 +19,6 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
               <Route path="/watchlist" component={Watchlist} />
               <Route path="/watched" component={Watched} />
               <Route component={NoMatch} />
