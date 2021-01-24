@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { MovieCard } from "../components/MovieCard";
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const Styles = styled.div`
   .movie-count {
@@ -18,16 +18,18 @@ const Styles = styled.div`
     text-align: center;
   }
 
+  .empty-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
   button {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 1.875rem auto;
   }
 
   a {
     text-decoration: none;
   }
-
 `;
 
 export const Watchlist = () => {
@@ -50,12 +52,14 @@ export const Watchlist = () => {
               ))}
             </>
           ) : (
-            <>
-            <div className="no-movies">You don't want to watch any movies?</div>
-            <Link to='/'>
-              <Button variant='success'>Search for movies</Button>
-            </Link>
-            </>
+            <div className="empty-container">
+              <div className="no-movies">
+                You don't want to watch any movies?
+              </div>
+              <Link to="/">
+                <Button variant="success">Search for movies</Button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

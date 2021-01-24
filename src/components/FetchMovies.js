@@ -6,7 +6,7 @@ const api = {
 };
 
 export const FetchMovies = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("donny darko");
   const [results, setResults] = useState([]);
 
   const queryHandler = (e) => {
