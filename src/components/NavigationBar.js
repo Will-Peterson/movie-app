@@ -1,46 +1,44 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
 
 const Styles = styled.div`
-  .navbar {
-    background-color: #222;
+  .brand {
+    padding: 0.3125rem 0;
+    font-size: 1.25rem;
   }
-  a,
-  .navbar-brand,
-  .navbar-nav .nav-link {
-    color: #bbb;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+    color: white;
   }
 `;
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar expand="lg" fixed="top">
-      <Navbar.Brand href="/">Movie App</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/">Home</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/watchlist">Watchlist</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/watched">Watched</Link>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
+    <Navbar expand="sm" bg="dark" fixed="top" variant="dark">
+      <Link className="brand" to="/">
+        Movie App
+      </Link>
+      <Navbar.Toggle />
+      <Navbar.Collapse>
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <NavLink className="nav-link" to="/">
+              Home <span className="sr-only">(current)</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/watchlist">
+              Watchlist
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/watched">
+              Watched
+            </NavLink>
+          </li>
+        </ul>
       </Navbar.Collapse>
     </Navbar>
   </Styles>
