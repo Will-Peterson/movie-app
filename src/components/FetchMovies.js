@@ -27,7 +27,7 @@ export const FetchMovies = () => {
 
   return (
     <div className="container">
-      <div class="input-group mb-5 mt-5">
+      <div className="input-group mb-5 mt-5">
         <input
           type="text"
           autoFocus
@@ -35,7 +35,7 @@ export const FetchMovies = () => {
           value={query}
           onChange={queryHandler}
           aria-describedby="inputGroup-sizing-sm"
-          class="form-control"
+          className="form-control"
         />
       </div>
       {results.length > 0 && (
