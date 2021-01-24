@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { MovieCard } from "../components/MovieCard";
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const Styles = styled.div`
   .movie-count {
@@ -12,8 +14,20 @@ const Styles = styled.div`
   .no-movies {
     font-size: 25px;
     color: #aaa;
-    margin-top: 60px;
+    margin-top: 6.25rem;
+    text-align: center;
   }
+
+  button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
 `;
 
 export const Watchlist = () => {
@@ -36,7 +50,12 @@ export const Watchlist = () => {
               ))}
             </>
           ) : (
-            <div className="no-movies">Add movies to your watchlist</div>
+            <>
+            <div className="no-movies">You don't want to watch any movies?</div>
+            <Link to='/'>
+              <Button variant='success'>Search for movies</Button>
+            </Link>
+            </>
           )}
         </div>
       </div>
