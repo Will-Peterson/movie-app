@@ -19,6 +19,7 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path='/movie-app' component={Home} />
               <Route path="/watchlist" component={Watchlist} />
               <Route path="/watched" component={Watched} />
               <Route component={NoMatch} />
