@@ -10,15 +10,17 @@ export const FetchMovies = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const queryHandler = e => {
+  const queryHandler = (e) => {
     e.preventDefault();
     setIsLoading(true);
     setQuery(e.target.value);
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api.key}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
-      .then(res => res.json())
-      .then(data => setResults(data.results));
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${api.key}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+    )
+      .then((res) => res.json())
+      .then((data) => setResults(data.results));
     setIsLoading(false);
-  }
+  };
 
   return (
     <div className="container">
@@ -34,14 +36,15 @@ export const FetchMovies = () => {
         />
       </div>
       {isLoading && <div>Movies loading...</div>}
-      {results.length > 0 &&
+      {results.length > 0 && (
         <div className="row justify-content-center text-center">
           {results.map((movie) => (
             <div style={{ maxWidth: "320px" }} className="mx-3" key={movie.id}>
               <MovieContainer movie={movie} />
             </div>
           ))}
-        </div>}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
-import { Jumbotron as Jumbo, Container } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import {Jumbotron as Jumbo} from 'react-bootstrap';
 import styled from "styled-components";
 import bgImage from "../assets/pulp-fiction.jpg";
 

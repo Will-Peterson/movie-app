@@ -22,7 +22,7 @@ export const NavigationBar = () => (
       </Link>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <ul className="navbar-nav ml-auto">     
+        <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <NavLink className="nav-link" to="/watchlist">
               Watchlist
