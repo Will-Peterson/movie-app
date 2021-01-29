@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MovieContainer } from "./MovieContainer";
 
 const api = {
@@ -6,24 +6,14 @@ const api = {
 };
 
 export const FetchMovies = () => {
-  const [query, setQuery] = useState("donny darko");
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  const queryHandler = (e) => {
-    e.preventDefault();
-    setQuery(e.target.value);
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${api.key}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.errors) {
-          setResults(data.results);
-        } else {
-          setResults([]);
-        }
-      });
-  };
+  useEffect(async () => {
+      const getData = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api.key}&language=en-US&page=1&include_adult=false&query=${setQuery}`);
+      const res = await getData.json();
+      setResults(res.results)
+  }, [setQuery]);
 
   return (
     <div className="container">
@@ -33,20 +23,19 @@ export const FetchMovies = () => {
           autoFocus
           placeholder="Search for movies..."
           value={query}
-          onChange={queryHandler}
+          onChange={e => setQuery(() => e.target.value)}
           aria-describedby="inputGroup-sizing-sm"
           className="form-control"
         />
       </div>
-      {results.length > 0 && (
+      {results.length > 0 &&
         <div className="row justify-content-center text-center">
           {results.map((movie) => (
             <div style={{ maxWidth: "320px" }} className="mx-3" key={movie.id}>
               <MovieContainer movie={movie} />
             </div>
           ))}
-        </div>
-      )}
+        </div>}
     </div>
   );
 };
