@@ -6,6 +6,7 @@ Build using [themoviedb.org](https://www.themoviedb.org/)'s API. User can select
 * [React](https://reactjs.org)
 * [React Bootstrap](https://react-bootstrap.github.io/)
 * [Styled Components](https://styled-components.com/)
+* Local Storage
 
 See it live [here](https://will-peterson.github.io/movie-app/)
 
